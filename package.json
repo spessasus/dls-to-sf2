@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "esbuild": "^0.24.0",
+    "spessasynth_lib": "^3.21.14"
+  },
+  "scripts": {
+    "build": "esbuild index.js --bundle --minify --sourcemap --outfile=index.min.js"
+  }
+}
