@@ -4,6 +4,7 @@
     "spessasynth_lib": "^3.21.14"
   },
   "scripts": {
+    "update": "npm update",
     "build": "esbuild index.js --bundle --minify --outfile=index.min.js"
   }
 }
