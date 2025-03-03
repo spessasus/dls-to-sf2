@@ -7,12 +7,16 @@ document.getElementById("dls_upload").oninput = e =>
     {
         return;
     }
+    /**
+     * @type {File}
+     */
     const file = e.target.files[0];
-    if (file.type.endsWith(".dls"))
+    if (!file.name.toLowerCase().endsWith(".dls"))
     {
         message.innerText = "Not a DLS file.";
         return;
     }
+    console.log(file.name);
     const dlsUploadButton = document.getElementById("dls_upload_btn");
     dlsUploadButton.innerText = file.name;
     message.innerText = "Loading...";
@@ -69,7 +73,7 @@ document.getElementById("dls_upload").oninput = e =>
             dlsUploadButton.innerText = "Convert another DLS";
             const blob = new Blob([binary.buffer], { type: "audio/soundfont" });
             const url = URL.createObjectURL(blob);
-            const name = file.name.replace("dls", "sf2");
+            const name = file.name.replaceAll(".DLS", ".sf2").replaceAll("dls", "sf2");
             downloadAnchor.href = url;
             downloadAnchor.download = name;
             downloadAnchor.innerText = `Download ${name}`;
