@@ -1,4 +1,4 @@
-import { BasicSoundFont, loadSoundFont } from "spessasynth_lib";
+import { BasicSoundBank, loadSoundFont } from "spessasynth_core";
 
 const message = document.getElementById("message");
 document.getElementById("dls_upload").oninput = e =>
@@ -23,7 +23,7 @@ document.getElementById("dls_upload").oninput = e =>
     setTimeout(async () =>
     {
         /**
-         * @type {BasicSoundFont}
+         * @type {BasicSoundBank}
          */
         let sfont;
         try

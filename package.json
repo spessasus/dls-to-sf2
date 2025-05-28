@@ -1,10 +1,12 @@
 {
   "devDependencies": {
-    "esbuild": "^0.25.0",
-    "spessasynth_lib": "latest"
+    "esbuild": "^0.25.0"
   },
   "scripts": {
     "update": "npm update",
     "build": "esbuild index.js --format=esm --bundle --minify --outfile=index.min.js"
+  },
+  "dependencies": {
+    "spessasynth_core": "latest"
   }
 }
